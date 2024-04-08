@@ -8,7 +8,6 @@ const Context = () => {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div>
-        <h1>My App</h1>
         <Toolbar />
       </div>
     </ThemeContext.Provider>

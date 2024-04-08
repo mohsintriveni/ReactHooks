@@ -14,26 +14,26 @@ function App() {
   const [name,setName]=useState('Mohsin');
 
   useEffect(() => {  
-    document.title = `The value of int is ${int}`;  
-  },[int]);  
+    document.title = `${int} ${name}`;  
+  },[int,name]);  
   
   function ChangeElement(value){
     setInt(prevInt => Math.max(prevInt+value,0));
   }
 
-  // function ChangeName(value){
-  //   if(name==="Mohsin Mujawar"){
-  //     setName(prevName => prevName);
-  //   }
-  //   else{
-  //     setName(prevName => prevName+" "+value);
-  //   }
-  // }
+  function ChangeName(value){
+    if(name==="Mohsin Mujawar"){
+      setName(prevName => prevName);
+    }
+    else{
+      setName(prevName => prevName+" "+value);
+    }
+  }
 
   return (
     <div className="App">
       <header className="App-header">
-        {/* <p onClick={() => setName("Mujawar")}>{name}</p> */}
+        <p onClick={() => setName("Mujawar")}>{name}</p>
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {/* <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -46,6 +46,8 @@ function App() {
         onIncrement={()=>ChangeElement(1)}
         onDecrement={()=>ChangeElement(-1)}
         ></Counter>
+
+
         <Table employees={employees}></Table>
         {/* <Users></Users> */}
 
